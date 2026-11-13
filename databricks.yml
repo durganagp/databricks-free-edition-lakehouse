@@ -1,0 +1,18 @@
+bundle:
+  name: lakehouse_free
+
+include:
+  - resources/*.yml
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      profile: dev
+
+  prod:
+    mode: production
+    workspace:
+      profile: prod
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
